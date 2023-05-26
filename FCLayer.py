@@ -24,4 +24,6 @@ class FCLayer(Layer):
         # update parameters
         self.weights -= learning_rate * weights_error
         self.bias -= learning_rate * output_error
+
+        self.weights = np.tanh(self.weights)
         return input_error
